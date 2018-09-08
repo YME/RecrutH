@@ -1,0 +1,53 @@
+name:                RecrutH
+version:             0.1.0.0
+github:              "yme/RecrutH"
+license:             BSD3
+author:              "Eduardo Barbosa"
+maintainer:          "example@example.com"
+copyright:           "2018 Eduardo Barbosa"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/herulume/RecrutH#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- cassava >= 0.5
+- bytestring >= 0.10.8
+- vector >= 0.12
+- text >= 1.2.3.0
+library:
+  source-dirs: src
+
+executables:
+  RecrutH-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - RecrutH
+
+tests:
+  RecrutH-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -O2
+    - -Wall
+    dependencies:
+    - RecrutH
